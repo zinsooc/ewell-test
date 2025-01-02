@@ -1,0 +1,27 @@
+@import "./variables";
+
+// mixin
+@mixin mobile {
+    @media (min-width : $view-mobile) and (max-width: #{$view-tablet - 1px}) {
+      .desk {
+        display: none !important;
+      }
+      @content;
+    }
+  }
+  @mixin tab {
+    @media (min-width : $view-tablet) and (max-width: #{$view-deskTop - 1px}) {
+      .desk {
+        display: none !important;
+      }
+      @content;
+    }
+  }
+  @mixin deskTop {
+    @media (min-width : $view-deskTop){
+      .mobile {
+        display: none !important;
+      }
+      @content;
+    }
+  }
